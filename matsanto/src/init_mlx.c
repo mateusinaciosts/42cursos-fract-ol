@@ -30,6 +30,8 @@ int init_mlx(t_fractol	f)
 {
     mlx_win_init(&f);
     init_fract(&f);
+
+	// funcao da mlx:
     mlx_loop_hook(f.mlx, draw_frac, &f);
     mlx_hook(f.win, 17, 0L, close_win, &f);
     mlx_key_hook(f.win, key_hook, &f);
