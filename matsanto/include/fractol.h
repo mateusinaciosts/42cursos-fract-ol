@@ -13,40 +13,52 @@
 #include <mlx.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "libft.h" 
+#include "../libft/libft.h" 
 
 
 typedef struct s_fractol
 {
-	void	*mlx;
-	void	*win;
-	void	*img;
-	void	*img_ptr;
-	int		endian;
-	int		sl;
-	int		bpp;
-	int		fract;
-	int		color;
-	int		x;
-	int		y;
-	int		y_max;
-	int		inter;
-	int		it_max;
-	double	zoom;
-	double	x1;
-	double	y1;
-	double	arg_re;
-	double	arg_im;
-	double	c_r;
-	double	c_i;
-	double	z_r;
-	double	z_i;
-	double	tmp;
-	double	max_im;
-	double	min_im;
-	double	max_re;
-	double	min_re;
-}	t_fractol;
+    // Componentes gráficos
+    void *mlx;
+    void *win;
+    void *img;
+    void *img_ptr;
+
+    // Informações de imagem
+    int endian;
+    int sl;
+    int bpp;
+
+    // Configurações da fractal
+    int fract;
+    int color;
+    int x;
+    int y;
+    int y_max;
+    int inter;
+    int it_max;
+
+    // Parâmetros de visualização
+    double zoom;
+    double x1;
+    double y1;
+
+    // Parâmetros de cálculo
+    double arg_re;
+    double arg_im;
+    double c_r;
+    double c_i;
+    double z_r;
+    double z_i;
+    double tmp;
+
+    // Limites da parte imaginária e real
+    double max_im;
+    double min_im;
+    double max_re;
+    double min_re;
+} t_fractol;
+
 
 int	zoom_interaction(int key, t_fractol *f);
 void	change_color(t_fractol *f);

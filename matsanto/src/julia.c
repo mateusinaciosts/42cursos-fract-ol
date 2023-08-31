@@ -3,30 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   julia.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acaldas <acaldas@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mateus <mateus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 20:08:29 by acaldas           #+#    #+#             */
-/*   Updated: 2023/04/27 22:18:45 by acaldas          ###   ########.fr       */
+/*   Updated: 2023/08/31 03:35:27 by mateus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-int	check_julia(int argc, char **argv, t_fractol *f)
-{
-	if (argc != 4)
-		return (0);
-	f->arg_re = parseDouble(argv[2]);
-	if (f->arg_re < -2.0 || f->arg_re > 2.0)
-		return (0);
-	if (!(check_double(argv[2])))
-		return (0);
-	if (!check_double(argv[3]))
-		return (0);
-	if (f->arg_im < -2 || f->arg_im > 2)
-		return (0);
-	return (1);
-}
 
 void	julia_init(t_fractol *f)
 {
@@ -37,6 +22,25 @@ void	julia_init(t_fractol *f)
 	f->max_im = (f->max_re - f->min_re) * HEIGTH / WIDTH + f->min_im;
 	f->it_max = 250;
 	f->color = 265;
+}
+
+void	*julia(t_fractol *f)
+{
+	double	x;
+	double	y;
+
+	x = 0;
+	while (x < WIDTH)
+	{
+		y = 0;
+		while (y < HEIGTH)
+		{
+			julia_math(f, y, x);
+			y++;
+		}
+		x++;
+	}
+	return (0);
 }
 
 void	julia_math(t_fractol *f, double x, double y)
@@ -62,23 +66,4 @@ void	julia_math(t_fractol *f, double x, double y)
 		put_pxl_to_img(f, x, y, 0x000000);
 	else
 		put_pxl_to_img(f, x, y, (inter * f->color * inter));
-}
-
-void	*julia(t_fractol *f)
-{
-	double	x;
-	double	y;
-
-	x = 0;
-	while (x < WIDTH)
-	{
-		y = 0;
-		while (y < HEIGTH)
-		{
-			julia_math(f, y, x);
-			y++;
-		}
-		x++;
-	}
-	return (0);
 }
