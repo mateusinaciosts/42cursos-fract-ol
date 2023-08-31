@@ -6,14 +6,13 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:24 by matsanto          #+#    #+#             */
-/*   Updated: 2023/08/31 14:03:25 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/08/31 17:11:05 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../include/fractol.h"
 
-void error_message()
+void	error_message(void)
 {
 	write(1, "This program renders 2 types of fractal set, ", 46);
 	write(1, "you need to choose one of them.\n", 33);
@@ -51,7 +50,7 @@ int	check_flag(t_fractol *f, int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
-    t_fractol f; 
+	t_fractol	f;
 
 	f.x = 0;
 	f.y = 0;

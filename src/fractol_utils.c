@@ -6,15 +6,13 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:35 by matsanto          #+#    #+#             */
-/*   Updated: 2023/08/31 14:03:35 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/08/31 17:09:21 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "../include/fractol.h"
 
-double	parseDouble(const char *str)
+double	parse_double(const char *str)
 {
 	int		sign;
 	double	result;
@@ -87,5 +85,3 @@ int	check_double(const char *str)
 	}
 	return (1);
 }
-
-

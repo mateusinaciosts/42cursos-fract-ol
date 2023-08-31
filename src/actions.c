@@ -6,34 +6,32 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:38 by matsanto          #+#    #+#             */
-/*   Updated: 2023/08/31 14:03:38 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/08/31 17:08:14 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../include/fractol.h"
 
 int	zoom_interaction(int key, t_fractol *f)
 {
-    if (key == 4)
-    {
-        double zoom_factor = 0.1;
+	double	zoom_factor;
 
-        f->min_re -= (f->max_re - f->min_re) * zoom_factor;
-        f->max_re += (f->max_re - f->min_re) * zoom_factor;
-        f->min_im -= (f->max_im - f->min_im) * zoom_factor;
-        f->max_im += (f->max_im - f->min_im) * zoom_factor;
-    }
-    else if (key == 5)
-    {
-        double zoom_factor = 0.1;
-
-        f->min_re += (f->max_re - f->min_re) * zoom_factor;
-        f->max_re -= (f->max_re - f->min_re) * zoom_factor;
-        f->min_im += (f->max_im - f->min_im) * zoom_factor;
-        f->max_im -= (f->max_im - f->min_im) * zoom_factor;
-    }
-    return (1);
+	zoom_factor = 0.1;
+	if (key == 4)
+	{
+		f->min_re -= (f->max_re - f->min_re) * zoom_factor;
+		f->max_re += (f->max_re - f->min_re) * zoom_factor;
+		f->min_im -= (f->max_im - f->min_im) * zoom_factor;
+		f->max_im += (f->max_im - f->min_im) * zoom_factor;
+	}
+	else if (key == 5)
+	{
+		f->min_re += (f->max_re - f->min_re) * zoom_factor;
+		f->max_re -= (f->max_re - f->min_re) * zoom_factor;
+		f->min_im += (f->max_im - f->min_im) * zoom_factor;
+		f->max_im -= (f->max_im - f->min_im) * zoom_factor;
+	}
+	return (1);
 }
 
 void	change_color(t_fractol *f)
@@ -72,4 +70,3 @@ int	key_action(int keycode, t_fractol *f)
 	draw_frac(f);
 	return (0);
 }
-

@@ -6,13 +6,13 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:32 by matsanto          #+#    #+#             */
-/*   Updated: 2023/08/31 14:03:32 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/08/31 17:12:37 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-void mlx_win_init(t_fractol *f)
+void	mlx_win_init(t_fractol *f)
 {
 	f->mlx = mlx_init();
 	f->win = mlx_new_window(f->mlx, WIDTH, HEIGTH, "Fractol");
@@ -20,7 +20,7 @@ void mlx_win_init(t_fractol *f)
 	f->img_ptr = mlx_get_data_addr(f->img, &f->bpp, &f->sl, &f->endian);
 }
 
-void init_fract(t_fractol *f)
+void	init_fract(t_fractol *f)
 {
 	if (f->fract == 1)
 		mandelbrot_init(f);
@@ -28,7 +28,7 @@ void init_fract(t_fractol *f)
 		julia_init(f);
 }
 
-int draw_frac(t_fractol *f)
+int	draw_frac(t_fractol *f)
 {
 	if (f->fract == 1)
 		mandelbrot(f);
@@ -38,12 +38,10 @@ int draw_frac(t_fractol *f)
 	return (0);
 }
 
-void init_mlx(t_fractol *f)
+void	init_mlx(t_fractol *f)
 {
 	mlx_win_init(f);
 	init_fract(f);
-
-	// funcao da mlx:
 	mlx_loop_hook(f->mlx, draw_frac, f);
 	mlx_hook(f->win, 17, 0L, close_win, f);
 	mlx_key_hook(f->win, key_action, f);

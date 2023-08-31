@@ -6,10 +6,9 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:15 by matsanto          #+#    #+#             */
-/*   Updated: 2023/08/31 14:03:17 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/08/31 17:11:58 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../include/fractol.h"
 
@@ -51,27 +50,22 @@ void	mandelbrot_math(t_fractol *f, double x, double y)
 	// Calcula os valores complexos correspondentes aos pixels
 	f->c_r = f->min_re + (x * (f->max_re - f->min_re)) / WIDTH;
 	f->c_i = f->min_im + (y * (f->max_im - f->min_im)) / HEIGTH;
-
 	// Inicializa valores para o loop de cálculo
 	f->z_r = 0;
 	f->z_i = 0;
 	inter = 0;
 	f->tmp = 0;
-
 	// Realiza o loop de cálculo da fractal
 	while (inter < f->it_max)
 	{
 		f->tmp = f->z_r * f->z_r - f->z_i * f->z_i + f->c_r;
 		f->z_i = 2 * f->z_i * f->z_r + f->c_i;
 		f->z_r = f->tmp;
-
 		// Verifica se o ponto está fora da região da fractal
 		if (f->z_r * f->z_r + f->z_i * f->z_i > 4)
 			break;
-
 		inter++;
 	}
-
 	// Define a cor do pixel com base na iteração
 	int color = (inter == f->it_max) ? 0xfcbdb : (inter * f->color * inter);
 	put_pxl_to_img(f, x, y, color);

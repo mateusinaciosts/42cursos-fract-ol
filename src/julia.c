@@ -6,13 +6,11 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:19 by matsanto          #+#    #+#             */
-/*   Updated: 2023/08/31 14:03:19 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/08/31 17:10:01 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../include/fractol.h"
-
 
 void	julia_init(t_fractol *f)
 {
