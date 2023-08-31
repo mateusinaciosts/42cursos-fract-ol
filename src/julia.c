@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   julia.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mateus <mateus@student.42.fr>              +#+  +:+       +#+        */
+/*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/23 20:08:29 by acaldas           #+#    #+#             */
-/*   Updated: 2023/08/31 03:35:27 by mateus           ###   ########.fr       */
+/*   Created: 2023/08/31 14:03:19 by matsanto          #+#    #+#             */
+/*   Updated: 2023/08/31 14:03:19 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "../include/fractol.h"
 

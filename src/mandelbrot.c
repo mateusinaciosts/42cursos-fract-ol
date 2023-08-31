@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   mandelbrot.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mateus <mateus@student.42.fr>              +#+  +:+       +#+        */
+/*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/23 20:09:15 by acaldas           #+#    #+#             */
-/*   Updated: 2023/08/31 02:55:56 by mateus           ###   ########.fr       */
+/*   Created: 2023/08/31 14:03:15 by matsanto          #+#    #+#             */
+/*   Updated: 2023/08/31 14:03:17 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "../include/fractol.h"
 
