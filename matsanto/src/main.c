@@ -23,13 +23,13 @@ int	check_flag(t_fractol *f, int argc, char **argv)
 		return (1);
 	}
 	else if (argc == 4 && ft_strncmp("julia", argv[1], 6) == 0
-		&& ft_atof(argv[2]) >= -2.0 && ft_atof(argv[2]) <= 2.0
-		&& ft_atof(argv[3]) >= -2.0 && ft_atof(argv[3]) <= 2.0
+		&& parseDouble(argv[2]) >= -2.0 && parseDouble(argv[2]) <= 2.0
+		&& parseDouble(argv[3]) >= -2.0 && parseDouble(argv[3]) <= 2.0
 		&& check_double(argv[2]) && check_double(argv[3]))
 	{
 		f->fract = 2;
-		f->arg_re = ft_atof(argv[2]);
-		f->arg_im = ft_atof(argv[3]);
+		f->arg_re = parseDouble(argv[2]);
+		f->arg_im = parseDouble(argv[3]);
 		return (1);
 	}
 	else
@@ -39,7 +39,7 @@ int	check_flag(t_fractol *f, int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
-	t_fractol	f;
+    t_fractol f; 
 
 	f.x = 0;
 	f.y = 0;
@@ -47,6 +47,6 @@ int	main(int argc, char **argv)
 	{
 		exit(0);
 	}
-	init_mlx(f);
+	init_mlx(&f);
 	return (0);
 }

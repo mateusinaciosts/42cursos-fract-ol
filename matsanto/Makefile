@@ -3,14 +3,15 @@ FLAGS 			= -Wall -Wextra -Werror -g3
 LIBFTFLAGS 		= -L ./libft/ -lft
 LIBXFLAGS 		= -lmlx -lXext -lX11 -lm -lz
 
-FILES 	= 	hooks.c \
+FILES 	= 	actions.c \
+			fractol_utils.c \
+			init_mlx.c \
 			julia.c \
 			main.c \
 			mandelbrot.c \
-			utils.c 
 			
 			
-PATH_SRC 		= ./mandatory/src/
+PATH_SRC 		= ./src/
 SRCS 			= $(addprefix $(PATH_SRC), $(FILES))
 OBJS 			= $(FILES:.c=.o)
 INCLUDES 		= -I ./mandatory/includes -I ./libft

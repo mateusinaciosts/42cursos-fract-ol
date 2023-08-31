@@ -8,11 +8,12 @@
 # define MAX_ITER 200
 
 //LIBRARIES INCLUDE
-# include <X11/X.h>
-# include <X11/keysym.h>
-# include <mlx.h>
-# include <stdlib.h>
-# include <unistd.h>
+#include <X11/X.h>
+#include <X11/keysym.h>
+#include <mlx.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include "libft.h" 
 
 
 typedef struct s_fractol
@@ -47,13 +48,19 @@ typedef struct s_fractol
 	double	min_re;
 }	t_fractol;
 
-int		check_double(const char *str);
+int	zoom_interaction(int key, t_fractol *f);
+void	change_color(t_fractol *f);
+int	key_action(int keycode, t_fractol *f);
+
 int		check_arg(t_fractol *f, int argc, char **argv);
+void init_mlx(t_fractol	*f);
+void init_fract(t_fractol *f);
 
-double	ft_atof(const char *str);
-int		key_hook(int keycode, t_fractol *f);
+double	parseDouble(const char *str);
+int		close_win(t_fractol *f);
+void	put_pxl_to_img(t_fractol *f, int x, int y, int color);
+int		check_double(const char *str);
 
-void	ft_zoom(int x, int y, t_fractol *f);
 void	mandelbrot_init(t_fractol *f);
 void	mandelbrot_math(t_fractol *f, double x, double y);
 void	mandelbrot(t_fractol *f);
@@ -63,15 +70,10 @@ void	julia_init(t_fractol *f);
 void	julia_math(t_fractol *f, double x, double y);
 void	*julia(t_fractol *f);
 
-int		mouse_zoom(int key, int x, int y, t_fractol *f);
-int		close_win(t_fractol *f);
-void	put_pxl_to_img(t_fractol *f, int x, int y, int color);
 
 int		draw_frac(t_fractol *f);
-void	fract_init(t_fractol *f);
 void	mlx_win_init(t_fractol *f);
 int		main(int argc, char **argv);
 
-void	color(t_fractol *f);
 
 #endif
