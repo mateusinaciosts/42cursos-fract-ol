@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mateus <mateus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:35 by matsanto          #+#    #+#             */
-/*   Updated: 2023/08/31 17:09:21 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/04 00:44:56 by mateus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	close_win(t_fractol *f)
 	exit(0);
 }
 
-void	put_pxl_to_img(t_fractol *f, int x, int y, int color)
+void	set_pixel_color(t_fractol *f, int x, int y, int color)
 {
 	if (f->x < WIDTH && f->y < WIDTH)
 	{

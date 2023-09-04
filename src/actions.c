@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   actions.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mateus <mateus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:38 by matsanto          #+#    #+#             */
-/*   Updated: 2023/08/31 17:08:14 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/04 02:30:47 by mateus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,6 @@ int	key_action(int keycode, t_fractol *f)
 {
 	if (keycode == 65307)
 		close_win(f);
-	else if (keycode == 'a')
-		f->it_max += 50;
-	else if (keycode == 'd')
-		f->it_max -= 50;
 	else if (keycode == 'r')
 		init_fract(f);
 	else if (keycode == 'c')

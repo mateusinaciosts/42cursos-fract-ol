@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mateus <mateus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:24 by matsanto          #+#    #+#             */
-/*   Updated: 2023/08/31 17:11:05 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/04 00:47:22 by mateus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@ int	check_flag(t_fractol *f, int argc, char **argv)
 		return (1);
 	}
 	else if (argc == 4 && ft_strncmp("julia", argv[1], 6) == 0
-		&& parseDouble(argv[2]) >= -2.0 && parseDouble(argv[2]) <= 2.0
-		&& parseDouble(argv[3]) >= -2.0 && parseDouble(argv[3]) <= 2.0
+		&& parse_double(argv[2]) >= -2.0 && parse_double(argv[2]) <= 2.0
+		&& parse_double(argv[3]) >= -2.0 && parse_double(argv[3]) <= 2.0
 		&& check_double(argv[2]) && check_double(argv[3]))
 	{
 		f->fract = 2;
-		f->arg_re = parseDouble(argv[2]);
-		f->arg_im = parseDouble(argv[3]);
+		f->arg_re = parse_double(argv[2]);
+		f->arg_im = parse_double(argv[3]);
 		return (1);
 	}
 	else

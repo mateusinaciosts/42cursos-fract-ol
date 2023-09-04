@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   julia.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mateus <mateus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:19 by matsanto          #+#    #+#             */
-/*   Updated: 2023/08/31 17:10:01 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/04 02:15:07 by mateus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	julia_init(t_fractol *f)
 	f->color = 265;
 }
 
-void	*julia(t_fractol *f)
+void	*window_julia(t_fractol *f)
 {
 	double	x;
 	double	y;
@@ -34,7 +34,7 @@ void	*julia(t_fractol *f)
 		y = 0;
 		while (y < HEIGTH)
 		{
-			julia_math(f, y, x);
+			calculate_julia(f, y, x);
 			y++;
 		}
 		x++;
@@ -42,7 +42,7 @@ void	*julia(t_fractol *f)
 	return (0);
 }
 
-void	julia_math(t_fractol *f, double x, double y)
+void	calculate_julia(t_fractol *f, double x, double y)
 {
 	int	inter;
 
@@ -62,7 +62,7 @@ void	julia_math(t_fractol *f, double x, double y)
 		inter++;
 	}
 	if (inter == f->it_max)
-		put_pxl_to_img(f, x, y, 0x000000);
+		set_pixel_color(f, x, y, 0x000000);
 	else
-		put_pxl_to_img(f, x, y, (inter * f->color * inter));
+		set_pixel_color(f, x, y, (inter * f->color * inter));
 }

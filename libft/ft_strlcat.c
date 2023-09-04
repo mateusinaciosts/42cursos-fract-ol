@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mateus <mateus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 10:52:00 by matsanto          #+#    #+#             */
-/*   Updated: 2023/05/23 11:08:34 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/04 03:29:48 by mateus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	if (size > count_dst)
 	{
 		value_expect = (count_dst + count_src);
-		while (src[i] && count_dst < size -1)
+		while (src[i] && count_dst < size - 1)
 		{
 			dst[count_dst++] = src[i++];
 		}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_mlx.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mateus <mateus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:32 by matsanto          #+#    #+#             */
-/*   Updated: 2023/08/31 17:12:37 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/04 02:12:59 by mateus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void	init_fract(t_fractol *f)
 int	draw_frac(t_fractol *f)
 {
 	if (f->fract == 1)
-		mandelbrot(f);
+		window_mandelbrot(f);
 	else if (f->fract == 2)
-		julia(f);
+		window_julia(f);
 	mlx_put_image_to_window(f->mlx, f->win, f->img, 0, 0);
 	return (0);
 }
