@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mandelbrot.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mateus <mateus@student.42.fr>              +#+  +:+       +#+        */
+/*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:15 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/04 03:37:26 by mateus           ###   ########.fr       */
+/*   Updated: 2023/09/04 16:36:04 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	mandelbrot_init(t_fractol *f)
 	f->max_re = 1.0;
 	f->min_im = -1.5;
 	f->max_im = f->min_im + (f->max_re - f->min_re);
-	f->it_max = 100;
+	f->max_iterations = 100;
 	f->color = 265;
 }
 
@@ -33,7 +33,7 @@ void	window_mandelbrot(t_fractol *f)
 	while (x < WIDTH)
 	{
 		y = 0;
-		while (y < HEIGTH)
+		while (y < HEIGHT)
 		{
 			calculate_mandelbrot(f, x, y);
 			y++;

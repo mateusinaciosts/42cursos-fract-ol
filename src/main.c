@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mateus <mateus@student.42.fr>              +#+  +:+       +#+        */
+/*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:24 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/04 00:47:22 by mateus           ###   ########.fr       */
+/*   Updated: 2023/09/04 16:34:41 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	check_flag(t_fractol *f, int argc, char **argv)
 {
 	if (argc == 2 && ft_strncmp("mandelbrot", argv[1], 11) == 0)
 	{
-		f->fract = 1;
+		f->fract_type = 1;
 		return (1);
 	}
 	else if (argc == 4 && ft_strncmp("julia", argv[1], 6) == 0
@@ -38,9 +38,9 @@ int	check_flag(t_fractol *f, int argc, char **argv)
 		&& parse_double(argv[3]) >= -2.0 && parse_double(argv[3]) <= 2.0
 		&& check_double(argv[2]) && check_double(argv[3]))
 	{
-		f->fract = 2;
-		f->arg_re = parse_double(argv[2]);
-		f->arg_im = parse_double(argv[3]);
+		f->fract_type = 2;
+		f->real_argument = parse_double(argv[2]);
+		f->imaginary_argument = parse_double(argv[3]);
 		return (1);
 	}
 	else
@@ -52,8 +52,8 @@ int	main(int argc, char **argv)
 {
 	t_fractol	f;
 
-	f.x = 0;
-	f.y = 0;
+	f.screen_x = 0;
+	f.screen_y = 0;
 	if (!check_flag(&f, argc, argv))
 	{
 		exit(0);

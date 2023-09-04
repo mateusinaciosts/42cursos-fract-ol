@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   julia.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mateus <mateus@student.42.fr>              +#+  +:+       +#+        */
+/*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:19 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/04 03:37:23 by mateus           ###   ########.fr       */
+/*   Updated: 2023/09/04 16:36:04 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	julia_init(t_fractol *f)
 	f->min_re = -2.0;
 	f->max_re = 2.0;
 	f->min_im = -2.0;
-	f->max_im = (f->max_re - f->min_re) * HEIGTH / WIDTH + f->min_im;
-	f->it_max = 250;
+	f->max_im = (f->max_re - f->min_re) * HEIGHT / WIDTH + f->min_im;
+	f->max_iterations = 250;
 	f->color = 265;
 }
 
@@ -32,7 +32,7 @@ void	*window_julia(t_fractol *f)
 	while (x < WIDTH)
 	{
 		y = 0;
-		while (y < HEIGTH)
+		while (y < HEIGHT)
 		{
 			calculate_julia(f, y, x);
 			y++;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mateus <mateus@student.42.fr>              +#+  +:+       +#+        */
+/*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:55 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/04 03:16:19 by mateus           ###   ########.fr       */
+/*   Updated: 2023/09/04 16:44:10 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 # define FRACTOL_H
 
 //PARAMS DEFINE
-# define HEIGTH 800
+# define HEIGHT 800
 # define WIDTH 800
-# define MAX_ITER 200
 
 //LIBRARIES INCLUDE
 # include <X11/X.h>
@@ -34,19 +33,16 @@ typedef struct s_fractol
 	void	*img_ptr;
 	int		endian;
 	int		sl;
-	int		bpp;
-	int		fract;
+	int		bits_pixel;
+	int		fract_type;
 	int		color;
-	int		x;
-	int		y;
-	int		y_max;
+	int		screen_x;
+	int		screen_y;
 	int		inter;
-	int		it_max;
+	int		max_iterations;
 	double	zoom;
-	double	x1;
-	double	y1;
-	double	arg_re;
-	double	arg_im;
+	double	real_argument;
+	double	imaginary_argument;
 	double	c_r;
 	double	c_i;
 	double	z_r;

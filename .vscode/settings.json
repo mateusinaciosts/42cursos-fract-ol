@@ -1,5 +1,8 @@
 {
     "files.associations": {
-        "fractol.h": "c"
+        "fractol.h": "c",
+        "limits": "c",
+        "*.tcc": "c",
+        "unistd.h": "c"
     }
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_mlx.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mateus <mateus@student.42.fr>              +#+  +:+       +#+        */
+/*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:32 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/04 02:12:59 by mateus           ###   ########.fr       */
+/*   Updated: 2023/09/04 16:39:47 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,24 @@
 void	mlx_win_init(t_fractol *f)
 {
 	f->mlx = mlx_init();
-	f->win = mlx_new_window(f->mlx, WIDTH, HEIGTH, "Fractol");
-	f->img = mlx_new_image(f->mlx, WIDTH, HEIGTH);
-	f->img_ptr = mlx_get_data_addr(f->img, &f->bpp, &f->sl, &f->endian);
+	f->win = mlx_new_window(f->mlx, WIDTH, HEIGHT, "Fractol");
+	f->img = mlx_new_image(f->mlx, WIDTH, HEIGHT);
+	f->img_ptr = mlx_get_data_addr(f->img, &f->bits_pixel, &f->sl, &f->endian);
 }
 
 void	init_fract(t_fractol *f)
 {
-	if (f->fract == 1)
+	if (f->fract_type == 1)
 		mandelbrot_init(f);
-	else if (f->fract == 2)
+	else if (f->fract_type == 2)
 		julia_init(f);
 }
 
 int	draw_frac(t_fractol *f)
 {
-	if (f->fract == 1)
+	if (f->fract_type == 1)
 		window_mandelbrot(f);
-	else if (f->fract == 2)
+	else if (f->fract_type == 2)
 		window_julia(f);
 	mlx_put_image_to_window(f->mlx, f->win, f->img, 0, 0);
 	return (0);
