@@ -4,6 +4,7 @@ LIBFTFLAGS 		= -L ./libft/ -lft
 LIBXFLAGS 		= -lmlx -lXext -lX11 -lm -lz
 
 FILES 	= 	actions.c \
+			calc_fractal.c \
 			fractol_utils.c \
 			init_mlx.c \
 			julia.c \
