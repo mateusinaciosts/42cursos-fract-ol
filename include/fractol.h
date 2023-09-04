@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:55 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/04 16:44:10 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:36:12 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ typedef struct s_fractol
 	double	min_re;
 }	t_fractol;
 
-int		zoom_interaction(int key, t_fractol *f);
+int	zoom_interaction(int key, int x, int y, t_fractol *f);
 void	change_color(t_fractol *f);
 int		key_action(int keycode, t_fractol *f);
 int		check_arg(t_fractol *f, int argc, char **argv);

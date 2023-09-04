@@ -3,33 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   actions.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mateus <mateus@student.42.fr>              +#+  +:+       +#+        */
+/*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:38 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/04 02:30:47 by mateus           ###   ########.fr       */
+/*   Updated: 2023/09/04 17:35:41 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-int	zoom_interaction(int key, t_fractol *f)
+int	zoom_interaction(int key, int x, int y, t_fractol *f)
 {
-	double	zoom_factor;
-
-	zoom_factor = 0.1;
-	if (key == 4)
+	x = 1;
+	y = 1;
+	if (key == 4 && x)
 	{
-		f->min_re -= (f->max_re - f->min_re) * zoom_factor;
-		f->max_re += (f->max_re - f->min_re) * zoom_factor;
-		f->min_im -= (f->max_im - f->min_im) * zoom_factor;
-		f->max_im += (f->max_im - f->min_im) * zoom_factor;
+		f->min_re -= f->min_re * 0.1;
+		f->max_re -= f->max_re * 0.1;
+		f->min_im -= f->min_im * 0.1;
+		f->max_im -= f->max_im * 0.1;
 	}
-	else if (key == 5)
+	if (key == 5 && y)
 	{
-		f->min_re += (f->max_re - f->min_re) * zoom_factor;
-		f->max_re -= (f->max_re - f->min_re) * zoom_factor;
-		f->min_im += (f->max_im - f->min_im) * zoom_factor;
-		f->max_im -= (f->max_im - f->min_im) * zoom_factor;
+		f->min_re += f->min_re * 0.1;
+		f->max_re += f->max_re * 0.1;
+		f->min_im += f->min_im * 0.1;
+		f->max_im += f->max_im * 0.1;
 	}
 	return (1);
 }
