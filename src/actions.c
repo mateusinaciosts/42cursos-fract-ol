@@ -3,33 +3,47 @@
 /*                                                        :::      ::::::::   */
 /*   actions.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mateus <mateus@student.42.fr>              +#+  +:+       +#+        */
+/*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:38 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/04 02:30:47 by mateus           ###   ########.fr       */
+/*   Updated: 2023/09/04 17:27:53 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
+void	zoom_in(t_fractol *f, double re_diff, double im_diff)
+{
+	f->min_re += re_diff;
+	f->max_re -= re_diff;
+	f->min_im += im_diff;
+	f->max_im -= im_diff;
+}
+
+void	zoom_out(t_fractol *f, double re_diff, double im_diff)
+{
+	f->min_re -= re_diff;
+	f->max_re += re_diff;
+	f->min_im -= im_diff;
+	f->max_im += im_diff;
+}
+
 int	zoom_interaction(int key, t_fractol *f)
 {
-	double	zoom_factor;
+	double	zoom;
+	double	re_diff;
+	double	im_diff;
 
-	zoom_factor = 0.1;
+	zoom = 0.1;
+	re_diff = (f->max_re - f->min_re) * zoom;
+	im_diff = (f->max_im - f->min_im) * zoom;
 	if (key == 4)
 	{
-		f->min_re -= (f->max_re - f->min_re) * zoom_factor;
-		f->max_re += (f->max_re - f->min_re) * zoom_factor;
-		f->min_im -= (f->max_im - f->min_im) * zoom_factor;
-		f->max_im += (f->max_im - f->min_im) * zoom_factor;
+		zoom_in(f, re_diff, im_diff);
 	}
 	else if (key == 5)
 	{
-		f->min_re += (f->max_re - f->min_re) * zoom_factor;
-		f->max_re -= (f->max_re - f->min_re) * zoom_factor;
-		f->min_im += (f->max_im - f->min_im) * zoom_factor;
-		f->max_im -= (f->max_im - f->min_im) * zoom_factor;
+		zoom_out(f, re_diff, im_diff);
 	}
 	return (1);
 }
