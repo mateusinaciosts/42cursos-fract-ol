@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:55 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/05 18:06:32 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/05 18:19:42 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,8 @@ typedef struct s_fractol
 	int		fract_type;
 	int		color;
 	int		max_iterations;
-	double	zoom;
 	double	real_argument;
 	double	imaginary_argument;
-	double	c_r;
-	double	c_i;
-	double	z_r;
-	double	z_i;
-	double	tmp;
 	double	max_im;
 	double	min_im;
 	double	max_re;

@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:19 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/05 18:05:36 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/05 18:17:29 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	julia_init(t_fractol *f)
 {
-	f->zoom = 200;
 	f->min_re = -2.0;
 	f->max_re = 2.0;
 	f->min_im = -2.0;
