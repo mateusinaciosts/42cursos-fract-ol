@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:15 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/05 17:28:07 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/05 18:05:24 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	mandelbrot_init(t_fractol *f)
 
 int	calculate_mandelbrot(t_fractol *f, double const_real, double const_imag)
 {
-	int	inter;
+	int		inter;
 	double	coord_x;
 	double	coord_y;
 	double	aux;
@@ -42,5 +42,4 @@ int	calculate_mandelbrot(t_fractol *f, double const_real, double const_imag)
 		inter++;
 	}
 	return (inter);
-
 }

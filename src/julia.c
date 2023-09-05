@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:19 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/05 17:53:56 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/05 18:05:36 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	julia_init(t_fractol *f)
 	f->color = 265;
 }
 
-int calculate_julia(t_fractol *f, double const_real, double const_imag)
+int	calculate_julia(t_fractol *f, double const_real, double const_imag)
 {
 	double	coord_x;
 	double	coord_y;
@@ -44,4 +44,3 @@ int calculate_julia(t_fractol *f, double const_real, double const_imag)
 	}
 	return (inter);
 }
-

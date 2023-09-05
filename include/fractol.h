@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:55 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/05 17:53:53 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/05 18:06:32 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,11 @@ int		close_win(t_fractol *f);
 void	set_pixel_color(t_fractol *f, int x, int y, int color);
 int		check_double(const char *str);
 void	mandelbrot_init(t_fractol *f);
-int	calculate_mandelbrot(t_fractol *f, double x, double y);
+int		calculate_mandelbrot(t_fractol *f, double x, double y);
 void	window_mandelbrot(t_fractol *f);
 int		check_julia(int argc, char **argv, t_fractol *f);
 void	julia_init(t_fractol *f);
-int	calculate_julia(t_fractol *f, double x, double y);
+int		calculate_julia(t_fractol *f, double x, double y);
 void	window_julia(t_fractol *f);
 int		draw_fract(t_fractol *f);
 void	mlx_win_init(t_fractol *f);
