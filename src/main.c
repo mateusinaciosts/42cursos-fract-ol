@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:24 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/04 16:34:41 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/05 14:51:31 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,6 @@ int	main(int argc, char **argv)
 {
 	t_fractol	f;
 
-	f.screen_x = 0;
-	f.screen_y = 0;
 	if (!check_flag(&f, argc, argv))
 	{
 		exit(0);

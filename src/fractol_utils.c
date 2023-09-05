@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:35 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/05 14:43:38 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/05 14:51:06 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,8 @@ int	close_win(t_fractol *f)
 
 void	set_pixel_color(t_fractol *f, int x, int y, int color)
 {
-	if (f->screen_x < WIDTH && f->screen_y < HEIGHT)
-	{
-		color = mlx_get_color_value(f->mlx, color);
-		ft_memcpy(f->img_ptr + 4 * WIDTH * y + x * 4,
-			&color, sizeof(int));
-	}
+	color = mlx_get_color_value(f->mlx, color);
+	ft_memcpy(f->img_ptr + 4 * WIDTH * y + x * 4, &color, sizeof(int));
 }
 
 int	check_double(const char *str)
