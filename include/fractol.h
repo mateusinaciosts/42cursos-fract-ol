@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:55 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/04 17:36:12 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/05 14:42:27 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ typedef struct s_fractol
 	int		color;
 	int		screen_x;
 	int		screen_y;
-	int		inter;
 	int		max_iterations;
 	double	zoom;
 	double	real_argument;
@@ -54,7 +53,7 @@ typedef struct s_fractol
 	double	min_re;
 }	t_fractol;
 
-int	zoom_interaction(int key, int x, int y, t_fractol *f);
+int		zoom_interaction(int key, int x, int y, t_fractol *f);
 void	change_color(t_fractol *f);
 int		key_action(int keycode, t_fractol *f);
 int		check_arg(t_fractol *f, int argc, char **argv);
@@ -70,8 +69,8 @@ void	window_mandelbrot(t_fractol *f);
 int		check_julia(int argc, char **argv, t_fractol *f);
 void	julia_init(t_fractol *f);
 void	calculate_julia(t_fractol *f, double x, double y);
-void	*window_julia(t_fractol *f);
-int		draw_frac(t_fractol *f);
+void	window_julia(t_fractol *f);
+int		draw_fract(t_fractol *f);
 void	mlx_win_init(t_fractol *f);
 int		main(int argc, char **argv);
 

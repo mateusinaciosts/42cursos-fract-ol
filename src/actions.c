@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:38 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/04 17:35:41 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/05 14:34:21 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,6 @@ int	key_action(int keycode, t_fractol *f)
 		init_fract(f);
 	else if (keycode == 'c')
 		change_color(f);
-	draw_frac(f);
+	draw_fract(f);
 	return (0);
 }

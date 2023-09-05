@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calc_fractal.c                                     :+:      :+:    :+:   */
+/*   calc_fractol.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 03:36:38 by mateus            #+#    #+#             */
-/*   Updated: 2023/09/04 16:36:04 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/05 14:41:54 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-// Realiza os cálculos matemáticos para a fractal de Mandelbrot
 void	calculate_mandelbrot(t_fractol *f, double x, double y)
 {
 	int	inter;

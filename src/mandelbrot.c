@@ -6,13 +6,12 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:15 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/04 16:36:04 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/05 14:37:38 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-// Inicializa os valores padrão da fractal de Mandelbrot
 void	mandelbrot_init(t_fractol *f)
 {
 	f->min_re = -2.2;
@@ -23,7 +22,6 @@ void	mandelbrot_init(t_fractol *f)
 	f->color = 265;
 }
 
-// Cria a fractal de Mandelbrot
 void	window_mandelbrot(t_fractol *f)
 {
 	double	x;

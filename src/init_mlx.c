@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:32 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/04 16:39:47 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/05 14:34:21 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	init_fract(t_fractol *f)
 		julia_init(f);
 }
 
-int	draw_frac(t_fractol *f)
+int	draw_fract(t_fractol *f)
 {
 	if (f->fract_type == 1)
 		window_mandelbrot(f);
@@ -42,7 +42,7 @@ void	init_mlx(t_fractol *f)
 {
 	mlx_win_init(f);
 	init_fract(f);
-	mlx_loop_hook(f->mlx, draw_frac, f);
+	mlx_loop_hook(f->mlx, draw_fract, f);
 	mlx_hook(f->win, 17, 0L, close_win, f);
 	mlx_key_hook(f->win, key_action, f);
 	mlx_hook(f->win, 4, 1L << 2, zoom_interaction, f);
