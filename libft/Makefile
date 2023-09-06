@@ -6,7 +6,7 @@
 #    By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/08 10:36:18 by matsanto          #+#    #+#              #
-#    Updated: 2023/05/26 14:47:25 by matsanto         ###   ########.fr        #
+#    Updated: 2023/09/05 21:43:29 by matsanto         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,16 +31,16 @@ OBJ = $(SOURCES:%.c=%.o)
 
 all: ${NAME}
 ${NAME}:	${OBJ}
-	ar -rcs ${NAME} ${OBJ}
+	@ar -rcs ${NAME} ${OBJ}
 
 %.o:	%.c
-	cc $(FLAGS) -I ${HEADER} -c $< -o $@
+	@cc $(FLAGS) -I ${HEADER} -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
 
 fclean:	clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 

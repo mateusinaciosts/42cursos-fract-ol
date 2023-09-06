@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:24 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/05 22:04:29 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/05 22:08:40 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "../include_bonus/fractol_bonus.h"
 
 void	error_message(void)
 {
-	write(1, "This program renders 2 types of fractal set, ", 46);
+	write(1, "\nbonus\n", 7);
+	write(1, "\nThis program renders 2 types of fractal set, ", 46);
 	write(1, "you need to choose one of them.\n", 33);
 	write(1, "\nOptions available: \n", 22);
 	write(1, "\tmandelbrot\n\tjulia parameter1 parameter2\n\n", 43);
