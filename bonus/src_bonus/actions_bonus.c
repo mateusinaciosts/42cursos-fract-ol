@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:38 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/05 22:08:11 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/06 17:41:19 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,35 @@ void	change_color(t_fractol *f)
 		f->color = 677212;
 	else if (colors == 5)
 		f->color = 37212;
+}
+
+int	update_position(int keycode, t_fractol *f)
+{
+	if (keycode == XK_Up)
+	{
+		f->min_im -= (f->max_im - f->min_im)
+			* 0.1;
+		f->max_im -= (f->max_im - f->min_im)
+			* 0.1;
+	}
+	if (keycode == XK_Down)
+	{
+		f->min_im += (f->max_im - f->min_im)
+			* 0.1;
+		f->max_im += (f->max_im - f->min_im)
+			* 0.1;
+	}
+	if (keycode == XK_Left)
+	{
+		f->min_re -= (f->max_re - f->min_re) * 0.1;
+		f->max_re -= (f->max_re - f->min_re) * 0.1;
+	}
+	if (keycode == XK_Right)
+	{
+		f->min_re += (f->max_re - f->min_re) * 0.1;
+		f->max_re += (f->max_re - f->min_re) * 0.1;
+	}
+	return (1);
 }
 
 int	key_action(int keycode, t_fractol *f)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_mlx_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mateus <mateus@student.42.fr>              +#+  +:+       +#+        */
+/*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:32 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/06 01:28:58 by mateus           ###   ########.fr       */
+/*   Updated: 2023/09/06 17:36:37 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ void	init_mlx(t_fractol *f)
 	init_fract(f);
 	mlx_loop_hook(f->mlx, draw_fract, f);
 	mlx_hook(f->win, 17, 0L, close_win, f);
-	mlx_key_hook(f->win, key_action, f);
 	mlx_hook(f->win, 4, 1L << 2, zoom_interaction, f);
+	mlx_hook(f->win, 2, 1L << 0, update_position, f);
+	mlx_key_hook(f->win, key_action, f);
 	mlx_loop(f->mlx);
 }

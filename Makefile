@@ -40,7 +40,7 @@ libft/libft.a :
 	@make -C ./libft --no-print-directory
 
 %.o: $(PATH_SRC)%.c
-	@cc $(FLAGS) $(INCLUDES) -c $< -o $@
+	cc $(FLAGS) $(INCLUDES) -c $< -o $@
 
 bonus:  $(BONUS)
 
@@ -48,7 +48,7 @@ $(BONUS): libft/libft.a $(OBJS_BONUS)
 	cc $(FLAGS) -o $(BONUS) $(OBJS_BONUS) $(LIBFTFLAGS) $(LIBXFLAGS) $(INCLUDES_BONUS)
 	
 %.o: $(PATH_SRC_BONUS)%.c
-	@cc $(FLAGS) $(INCLUDES_BONUS) -c $< -o $@
+	cc $(FLAGS) $(INCLUDES_BONUS) -c $< -o $@
 
 clean:
 		rm -rf $(OBJS) $(OBJS_BONUS)
@@ -62,19 +62,19 @@ re:		fclean all
 
 # TEST RULES ************************************************************* #
 testm:
-	clear
+	@clear
 	@make re
 	@make bonus
 	./fractol_bonus mandelbrot
 
 testj:
-	clear
+	@clear
 	@make re
 	@make bonus
 	./fractol_bonus julia 0.2 0.6
 
 testt:
-	clear
+	@clear
 	@make re
 	@make bonus
 	./fractol_bonus tricorn

@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:55 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/06 11:18:13 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/06 17:41:32 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,6 @@ int		calculate_julia(t_fractol *f, double x, double y);
 void	tricorn_init(t_fractol *f);
 void	window_tricorn(t_fractol *f);
 int		calculate_tricorn(t_fractol *f, double const_real, double const_imag);
+int		update_position(int keycode, t_fractol *fract);
 
 #endif
