@@ -71,7 +71,7 @@ testj:
 	clear
 	@make re
 	@make bonus
-	./fractol_bonus julia -0.08 0.724
+	./fractol_bonus julia 0.2 0.6
 
 testt:
 	clear
