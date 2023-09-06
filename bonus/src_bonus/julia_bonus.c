@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:19 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/05 22:08:40 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/06 20:26:56 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 void	julia_init(t_fractol *f)
 {
-	f->min_re = -2.0;
-	f->max_re = 2.0;
-	f->min_im = -2.0;
-	f->max_im = (f->max_re - f->min_re) * HEIGHT / WIDTH + f->min_im;
+	f->min_real = -2.0;
+	f->max_real = 2.0;
+	f->min_imaginary = -2.0;
+	f->max_imaginary = (f->max_real - f->min_real) * HEIGHT / WIDTH
+		+ f->min_imaginary;
 	f->max_iterations = 250;
 	f->color = 265;
 }

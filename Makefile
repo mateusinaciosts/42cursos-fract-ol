@@ -5,7 +5,7 @@ LIBFTFLAGS 		= -L ./libft/ -lft
 LIBXFLAGS 		= -lmlx -lXext -lX11 -lm -lz
 
 FILES 	= 	actions.c \
-			calc_fractol.c \
+			window_fractol.c \
 			fractol_utils.c \
 			init_mlx.c \
 			julia.c \
@@ -18,7 +18,7 @@ OBJS 			= $(SRCS:.c=.o)
 INCLUDES 		= -I ./mandatory/includes -I ./libft
 
 FILES_BONUS =	actions_bonus.c \
-				calc_fractol_bonus.c \
+				window_fractol_bonus.c \
 				fractol_utils_bonus.c \
 				init_mlx_bonus.c \
 				julia_bonus.c \

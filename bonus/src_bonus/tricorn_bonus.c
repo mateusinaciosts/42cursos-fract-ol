@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tricorn_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mateus <mateus@student.42.fr>              +#+  +:+       +#+        */
+/*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 00:41:56 by mateus            #+#    #+#             */
-/*   Updated: 2023/09/06 01:34:42 by mateus           ###   ########.fr       */
+/*   Updated: 2023/09/06 20:26:13 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	tricorn_init(t_fractol *f)
 {
-	f->min_re = -2.1;
-	f->max_re = 2.0;
-	f->min_im = -2.0;
-	f->max_im = (f->max_re - f->min_re) + f->min_im;
+	f->min_real = -2.1;
+	f->max_real = 2.0;
+	f->min_imaginary = -2.0;
+	f->max_imaginary = (f->max_real - f->min_real) + f->min_imaginary;
 	f->max_iterations = 100;
 	f->color = 265;
 }

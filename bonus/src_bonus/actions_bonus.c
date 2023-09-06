@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:38 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/06 17:41:19 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/06 20:26:13 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@ int	zoom_interaction(int key, int x, int y, t_fractol *f)
 	y = 1;
 	if (key == 4 && x)
 	{
-		f->min_re -= f->min_re * 0.1;
-		f->max_re -= f->max_re * 0.1;
-		f->min_im -= f->min_im * 0.1;
-		f->max_im -= f->max_im * 0.1;
+		f->min_real -= f->min_real * 0.1;
+		f->max_real -= f->max_real * 0.1;
+		f->min_imaginary -= f->min_imaginary * 0.1;
+		f->max_imaginary -= f->max_imaginary * 0.1;
 	}
 	if (key == 5 && y)
 	{
-		f->min_re += f->min_re * 0.1;
-		f->max_re += f->max_re * 0.1;
-		f->min_im += f->min_im * 0.1;
-		f->max_im += f->max_im * 0.1;
+		f->min_real += f->min_real * 0.1;
+		f->max_real += f->max_real * 0.1;
+		f->min_imaginary += f->min_imaginary * 0.1;
+		f->max_imaginary += f->max_imaginary * 0.1;
 	}
 	return (1);
 }
@@ -58,27 +58,23 @@ int	update_position(int keycode, t_fractol *f)
 {
 	if (keycode == XK_Up)
 	{
-		f->min_im -= (f->max_im - f->min_im)
-			* 0.1;
-		f->max_im -= (f->max_im - f->min_im)
-			* 0.1;
+		f->min_imaginary -= (f->max_imaginary - f->min_imaginary) * 0.1;
+		f->max_imaginary -= (f->max_imaginary - f->min_imaginary) * 0.1;
 	}
 	if (keycode == XK_Down)
 	{
-		f->min_im += (f->max_im - f->min_im)
-			* 0.1;
-		f->max_im += (f->max_im - f->min_im)
-			* 0.1;
+		f->min_imaginary += (f->max_imaginary - f->min_imaginary) * 0.1;
+		f->max_imaginary += (f->max_imaginary - f->min_imaginary) * 0.1;
 	}
 	if (keycode == XK_Left)
 	{
-		f->min_re -= (f->max_re - f->min_re) * 0.1;
-		f->max_re -= (f->max_re - f->min_re) * 0.1;
+		f->min_real -= (f->max_real - f->min_real) * 0.1;
+		f->max_real -= (f->max_real - f->min_real) * 0.1;
 	}
 	if (keycode == XK_Right)
 	{
-		f->min_re += (f->max_re - f->min_re) * 0.1;
-		f->max_re += (f->max_re - f->min_re) * 0.1;
+		f->min_real += (f->max_real - f->min_real) * 0.1;
+		f->max_real += (f->max_real - f->min_real) * 0.1;
 	}
 	return (1);
 }

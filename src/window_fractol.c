@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 03:36:38 by mateus            #+#    #+#             */
-/*   Updated: 2023/09/05 18:06:25 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/06 20:26:13 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@ static double	map_real(int x, t_fractol *f)
 {
 	double	real_range;
 
-	real_range = f->max_re - f->min_re;
-	return (f->min_re + (x * real_range) / WIDTH);
+	real_range = f->max_real - f->min_real;
+	return (f->min_real + (x * real_range) / WIDTH);
 }
 
 static double	map_imag(int y, t_fractol *f)
 {
 	double	imag_range;
 
-	imag_range = f->max_im - f->min_im;
-	return (f->min_im + (y * imag_range) / HEIGHT);
+	imag_range = f->max_imaginary - f->min_imaginary;
+	return (f->min_imaginary + (y * imag_range) / HEIGHT);
 }
 
 void	window_mandelbrot(t_fractol *f)

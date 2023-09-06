@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:55 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/06 11:18:11 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/06 20:26:13 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ typedef struct s_fractol
 	int		max_iterations;
 	double	real_argument;
 	double	imaginary_argument;
-	double	max_im;
-	double	min_im;
-	double	max_re;
-	double	min_re;
+	double	max_imaginary;
+	double	min_imaginary;
+	double	max_real;
+	double	min_real;
 }	t_fractol;
 
 void	mlx_win_init(t_fractol *f);
