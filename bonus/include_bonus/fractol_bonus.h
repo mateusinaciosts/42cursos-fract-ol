@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   fractol_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mateus <mateus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:55 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/05 22:10:44 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/06 01:38:40 by mateus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#ifndef FRACTOL_BONUS_H
+# define FRACTOL_BONUS_H
 
 //PARAMS DEFINE
 # define HEIGHT 800
@@ -65,5 +65,8 @@ void	window_julia(t_fractol *f);
 int		draw_fract(t_fractol *f);
 void	mlx_win_init(t_fractol *f);
 int		main(int argc, char **argv);
+void	window_tricorn(t_fractol *f);
+void	tricorn_init(t_fractol *f);
+int		calculate_tricorn(t_fractol *f, double const_real, double const_imag);
 
 #endif

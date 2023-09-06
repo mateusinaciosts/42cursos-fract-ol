@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_mlx_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mateus <mateus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:32 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/05 22:08:40 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/06 01:28:58 by mateus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	init_fract(t_fractol *f)
 		mandelbrot_init(f);
 	else if (f->fract_type == 2)
 		julia_init(f);
+	else if (f->fract_type == 3)
+		tricorn_init(f);
 }
 
 int	draw_fract(t_fractol *f)
@@ -34,6 +36,8 @@ int	draw_fract(t_fractol *f)
 		window_mandelbrot(f);
 	else if (f->fract_type == 2)
 		window_julia(f);
+	else if (f->fract_type == 3)
+		window_tricorn(f);
 	mlx_put_image_to_window(f->mlx, f->win, f->img, 0, 0);
 	return (0);
 }

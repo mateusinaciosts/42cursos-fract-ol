@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   calc_fractol_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mateus <mateus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 03:36:38 by mateus            #+#    #+#             */
-/*   Updated: 2023/09/05 22:08:40 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/06 01:02:29 by mateus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,29 @@ void	window_mandelbrot(t_fractol *f)
 		while (y++ < HEIGHT)
 		{
 			inter = calculate_mandelbrot(f, map_real(x, f), map_imag(y, f));
+			if (inter == f->max_iterations)
+				color = 0x000000;
+			else
+				color = inter * f->color * inter;
+			set_pixel_color(f, x, y, color);
+		}
+	}
+}
+
+void	window_tricorn(t_fractol *f)
+{
+	double	x;
+	double	y;
+	int		inter;
+	int		color;
+
+	x = 0;
+	while (x++ < WIDTH)
+	{
+		y = 0;
+		while (y++ < HEIGHT)
+		{
+			inter = calculate_tricorn(f, map_real(x, f), map_imag(y, f));
 			if (inter == f->max_iterations)
 				color = 0x000000;
 			else

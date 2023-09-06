@@ -24,6 +24,7 @@ FILES_BONUS =	actions_bonus.c \
 				julia_bonus.c \
 				main_bonus.c \
 				mandelbrot_bonus.c \
+				tricorn_bonus.c
 
 PATH_SRC_BONUS 	= ./bonus/src_bonus/
 SRCS_BONUS 		= $(addprefix $(PATH_SRC_BONUS), $(FILES_BONUS))
@@ -71,5 +72,11 @@ testj:
 	@make re
 	@make bonus
 	./fractol_bonus julia -0.08 0.724
+
+testt:
+	clear
+	@make re
+	@make bonus
+	./fractol_bonus tricorn
 
 .PHONY: all bonus clean fclean re
