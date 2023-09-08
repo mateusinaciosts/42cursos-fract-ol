@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calc_fractol.c                                     :+:      :+:    :+:   */
+/*   window_fractol.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 03:36:38 by mateus            #+#    #+#             */
-/*   Updated: 2023/09/06 20:26:13 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/08 16:55:57 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	window_mandelbrot(t_fractol *f)
 	double	x;
 	double	y;
 	int		inter;
-	int		color;
 
 	x = 0;
 	while (x++ < WIDTH)
@@ -43,10 +42,9 @@ void	window_mandelbrot(t_fractol *f)
 		{
 			inter = calculate_mandelbrot(f, map_real(x, f), map_imag(y, f));
 			if (inter == f->max_iterations)
-				color = 0x000000;
+				set_pixel_color(f, x, y, 0x000000);
 			else
-				color = inter * f->color * inter;
-			set_pixel_color(f, x, y, color);
+				set_pixel_color(f, x, y, (inter * f->color * inter));
 		}
 	}
 }

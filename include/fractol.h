@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:55 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/06 20:26:13 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/08 16:07:28 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ typedef struct s_fractol
 {
 	void	*mlx;
 	void	*win;
-	void	*img;
 	void	*img_ptr;
+	void	*image;
 	int		endian;
 	int		sl;
 	int		bits_pixel;

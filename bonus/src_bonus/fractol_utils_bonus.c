@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:35 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/05 22:08:40 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/08 17:34:00 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ double	parse_double(const char *str)
 
 int	close_win(t_fractol *f)
 {
-	mlx_destroy_image(f->mlx, f->img);
+	mlx_destroy_image(f->mlx, f->img_ptr);
 	mlx_destroy_window(f->mlx, f->win);
 	mlx_destroy_display(f->mlx);
 	free(f->mlx);
@@ -52,7 +52,7 @@ int	close_win(t_fractol *f)
 void	set_pixel_color(t_fractol *f, int x, int y, int color)
 {
 	color = mlx_get_color_value(f->mlx, color);
-	ft_memcpy(f->img_ptr + 4 * WIDTH * y + x * 4, &color, sizeof(int));
+	ft_memcpy(f->image + 4 * WIDTH * y + x * 4, &color, sizeof(int));
 }
 
 int	check_double(const char *str)
