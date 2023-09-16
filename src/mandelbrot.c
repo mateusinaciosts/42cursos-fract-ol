@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:15 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/05 18:05:24 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/06 20:26:13 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	mandelbrot_init(t_fractol *f)
 {
-	f->min_re = -2.0;
-	f->max_re = 1.0;
-	f->min_im = -1.5;
-	f->max_im = f->min_im + (f->max_re - f->min_re);
+	f->min_real = -2.0;
+	f->max_real = 1.0;
+	f->min_imaginary = -1.5;
+	f->max_imaginary = f->min_imaginary + (f->max_real - f->min_real);
 	f->max_iterations = 100;
 	f->color = 265;
 }

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractol.h                                          :+:      :+:    :+:   */
+/*   fractol_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:55 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/08 16:07:28 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/09 14:30:23 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTOL_H
-# define FRACTOL_H
+#ifndef FRACTOL_BONUS_H
+# define FRACTOL_BONUS_H
 
 //PARAMS DEFINE
 # define HEIGHT 800
@@ -23,7 +23,7 @@
 # include <mlx.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "../libft/libft.h" 
+# include "../../libft/libft.h" 
 
 typedef struct s_fractol
 {
@@ -63,5 +63,9 @@ int		calculate_mandelbrot(t_fractol *f, double x, double y);
 void	julia_init(t_fractol *f);
 void	window_julia(t_fractol *f);
 int		calculate_julia(t_fractol *f, double x, double y);
+void	tricorn_init(t_fractol *f);
+void	window_tricorn(t_fractol *f);
+int		calculate_tricorn(t_fractol *f, double const_real, double const_imag);
+void	update_position(int keycode, t_fractol *fract);
 
 #endif

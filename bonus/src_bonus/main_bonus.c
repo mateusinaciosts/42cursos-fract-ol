@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mateus <mateus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:24 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/05 22:04:29 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/06 01:28:28 by mateus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/fractol.h"
+#include "../include_bonus/fractol_bonus.h"
 
 void	error_message(void)
 {
-	write(1, "This program renders 2 types of fractal set, ", 46);
+	write(1, "\nbonus\n", 8);
+	write(1, "\nThis program renders 3 types of fractal set, ", 47);
 	write(1, "you need to choose one of them.\n", 33);
 	write(1, "\nOptions available: \n", 22);
-	write(1, "\tmandelbrot\n\tjulia parameter1 parameter2\n\n", 43);
+	write(1, "\tmandelbrot\n\ttricorn\n\tjulia arg1 arg2\n\n", 40);
 	write(1, "Exemples: \n", 12);
 	write(1, "\t$./fractol mandelbrot\n", 24);
+	write(1, "\t$./fractol tricorn\n", 21);
 	write(1, "\t$./fractol julia 0.4 -0.6\n\n", 29);
 }
 
@@ -28,6 +30,11 @@ int	check_flag(t_fractol *f, int argc, char **argv)
 	if (argc == 2 && ft_strncmp("mandelbrot", argv[1], 11) == 0)
 	{
 		f->fract_type = 1;
+		return (1);
+	}
+	else if (argc == 2 && ft_strncmp("tricorn", argv[1], 7) == 0)
+	{
+		f->fract_type = 3;
 		return (1);
 	}
 	else if (argc == 4 && ft_strncmp("julia", argv[1], 6) == 0
