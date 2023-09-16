@@ -6,7 +6,7 @@
 /*   By: matsanto <matsanto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 14:03:38 by matsanto          #+#    #+#             */
-/*   Updated: 2023/09/06 20:26:13 by matsanto         ###   ########.fr       */
+/*   Updated: 2023/09/09 14:32:42 by matsanto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,33 +54,38 @@ void	change_color(t_fractol *f)
 		f->color = 37212;
 }
 
-int	update_position(int keycode, t_fractol *f)
+void	update_position(int keycode, t_fractol *f)
 {
+	long double	middle_i;
+	long double	middle_r;
+
+	middle_i = f->max_imaginary - f->min_imaginary;
+	middle_r = f->max_real - f->min_real;
 	if (keycode == XK_Up)
 	{
-		f->min_imaginary -= (f->max_imaginary - f->min_imaginary) * 0.1;
-		f->max_imaginary -= (f->max_imaginary - f->min_imaginary) * 0.1;
+		f->min_imaginary -= middle_i * 0.125;
+		f->max_imaginary -= middle_i * 0.125;
 	}
 	if (keycode == XK_Down)
 	{
-		f->min_imaginary += (f->max_imaginary - f->min_imaginary) * 0.1;
-		f->max_imaginary += (f->max_imaginary - f->min_imaginary) * 0.1;
+		f->min_imaginary += middle_i * 0.125;
+		f->max_imaginary += middle_i * 0.125;
 	}
 	if (keycode == XK_Left)
 	{
-		f->min_real -= (f->max_real - f->min_real) * 0.1;
-		f->max_real -= (f->max_real - f->min_real) * 0.1;
+		f->min_real -= middle_r * 0.125;
+		f->max_real -= middle_r * 0.125;
 	}
 	if (keycode == XK_Right)
 	{
-		f->min_real += (f->max_real - f->min_real) * 0.1;
-		f->max_real += (f->max_real - f->min_real) * 0.1;
+		f->min_real += middle_r * 0.125;
+		f->max_real += middle_r * 0.125;
 	}
-	return (1);
 }
 
 int	key_action(int keycode, t_fractol *f)
 {
+	update_position(keycode, f);
 	if (keycode == 65307)
 		close_win(f);
 	else if (keycode == 'r')
